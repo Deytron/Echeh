@@ -1,4 +1,5 @@
 ## Pions :
+- 
 
 ## Tours :
 - Deuxième chance
@@ -8,7 +9,7 @@
 ## Fous :
 
 ## Cavaliers :
--S'il meurt, un pion dans la case adjacente se transforme en cavalier
+- S'il meurt, un pion dans la case adjacente se transforme en cavalier
 
 ## Dame :
 
