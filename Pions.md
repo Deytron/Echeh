@@ -1,6 +1,6 @@
 ## Règles additionnelles
 
-- Le plateau est en 10x10 au lieu de 8x8
+- Le plateau est en 16x10 au lieu de 8x8
 
 ## Pions
 ### Stats
