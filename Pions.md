@@ -4,6 +4,12 @@
 - L'attaque des pièces se fait sur un lancé de dé 20, chaque pièce à une configuration de lancé différente.
 - Le joueur dispose de 20 points de déplacement pour déplacer ses unités. Chaque unité à un coût de déplacement.
 - Les critiques font le double de dégats
+- Les pièces peuvent revenir en arrière
+
+## Conditions de victoires
+
+- Le roi est mort
+- Le joueur n'a que 7 pièces restantes
 
 ## Pions
 ### Stats
@@ -15,6 +21,7 @@
 - Si il y a un dernier pion en vie, c'est Ken le survivant, il peut tuer en une seule fois un pion juste à côté
 - Comme au shogi, le pion peut être promu et gagner des stats ---------> Un pion ne peut être promu que dans les trois premières lignes de sa partie de terrain.
 - Le changement de classe d'un pion dépend de la configuration dans laquelle il se trouve.
+- Le pion se déplacer également à gauche et à droite.
 ### Classes de pions
 - Assassin : Peut passer derrière l'ennemi pour faire plus mal (+50), mais se retrouve exposé (Doit se trouver seul à une extrémité du plateau)
 - Tank : A 200 PV au lieu de 100 (Doit se trouver devant 3 pions alliés)
