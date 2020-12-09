@@ -21,7 +21,7 @@
 - Si il y a un dernier pion en vie, c'est Ken le survivant, il peut tuer en une seule fois un pion juste à côté
 - Comme au shogi, le pion peut être promu et gagner des stats ---------> Un pion ne peut être promu que dans les trois premières lignes de sa partie de terrain.
 - Le changement de classe d'un pion dépend de la configuration dans laquelle il se trouve.
-- Le pion se déplacer également à gauche et à droite.
+- Le pion peut se déplacer également à gauche et à droite.
 ### Classes de pions
 - Assassin : Peut passer derrière l'ennemi pour faire plus mal (+50), mais se retrouve exposé (Doit se trouver seul à une extrémité du plateau)
 - Tank : A 200 PV au lieu de 100 (Doit se trouver devant 3 pions alliés)
