@@ -13,8 +13,7 @@
 - Coût de déplacement : 1
 ### Règles pions
 - Si il y a un dernier pion en vie, c'est Ken le survivant, il peut tuer en une seule fois un pion juste à côté
-- Comme au shogi, le pion peut être promu et gagner des stats s'il tue d'autres pions
----------> Un pion ne peut être promu que dans les trois premières lignes de sa partie de terrain.
+- Comme au shogi, le pion peut être promu et gagner des stats ---------> Un pion ne peut être promu que dans les trois premières lignes de sa partie de terrain.
 - Le changement de classe d'un pion dépend de la configuration dans laquelle il se trouve.
 ### Classes de pions
 - Assassin : Peut passer derrière l'ennemi pour faire plus mal (+50), mais se retrouve exposé (Doit se trouver seul à une extrémité du plateau)
@@ -73,4 +72,4 @@
 - Coût de déplacement : 1
 ### Règles roi
 - Si sa reine meurt, le roi peut se déplacer de la même manière que la reine (buff)
-- Le roi donne de la force à l'équipe, s'il meurt, toutes les stats des pions baisses (-50% d'attaque et 10% de critique)
+- Le roi donne de la force à l'équipe, s'il meurt, toutes les stats des pions baisseent (-50% d'attaque et 10% de critique)
