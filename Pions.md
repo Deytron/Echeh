@@ -79,4 +79,4 @@
 - Coût de déplacement : 1
 ### Règles roi
 - Si sa reine meurt, le roi peut se déplacer de la même manière que la reine (buff)
-- Le roi donne de la force à l'équipe, s'il meurt, toutes les stats des pions baisseent (-50% d'attaque et 10% de critique)
+- Le roi donne de la force à l'équipe, s'il meurt, toutes les stats des pions baisseent (-50% d'attaque et -1 sur le jet de critique)
