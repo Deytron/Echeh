@@ -7,6 +7,7 @@ class Roi {
     this.attaque = 30;
     this.moveCost = 1;
     this.chanceCrit = Math.round(random(1, 20));
+    this.selectable = 0;
   }
 
   display() {
@@ -16,7 +17,19 @@ class Roi {
       image(RoiWhite, this.x, this.y, 50, 50);
     }
   }
+
+  isSelectable() {
+    if (this.selectable == 1) {
+      console.log("oui");
+      fill(255, 204, 0);
+      carre = square(this.x, this.y, 50);
+    } else {
+      fill(25, 24, 0);
+      carre = square(this.x, this.y, 50);
+    }
+  }
 }
+
 class Dame {
   constructor(square, color) {
     this.x = square.x;
@@ -26,6 +39,7 @@ class Dame {
     this.attaque = 30;
     this.moveCost = 1;
     this.chanceCrit = Math.round(random(1, 20));
+    this.selectable = 0;
   }
 
   display() {
@@ -46,6 +60,7 @@ class Fou {
     this.attaque = 30;
     this.moveCost = 1;
     this.chanceCrit = Math.round(random(1, 20));
+    this.selectable = 0;
   }
 
   display() {
@@ -66,6 +81,7 @@ class Cavalier {
     this.attaque = 30;
     this.moveCost = 1;
     this.chanceCrit = Math.round(random(1, 20));
+    this.selectable = 0;
   }
 
   display() {
@@ -86,6 +102,7 @@ class Tour {
     this.attaque = 30;
     this.moveCost = 1;
     this.chanceCrit = Math.round(random(1, 20));
+    this.selectable = 0;
   }
 
   display() {
@@ -106,13 +123,14 @@ class Pion {
     this.attaque = 30;
     this.moveCost = 1;
     this.chanceCrit = Math.round(random(1, 20));
+    this.selectable = 0;
   }
 
   display() {
     if (this.color == 1) {
-      image(PionWhite, this.x, this.y, 50, 50);
-    } else {
       image(PionBlack, this.x, this.y, 50, 50);
+    } else {
+      image(PionWhite, this.x, this.y, 50, 50);
     }
   }
 }

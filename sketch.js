@@ -1,3 +1,6 @@
+//1 = Noir
+//0 = Blanc
+
 //Définition tableau
 var squares = [];
 var pions = [];
@@ -38,6 +41,7 @@ function centerCanvas() {
 }
 
 function setup() {
+  frameRate(60);
   cnv = createCanvas(500, 800);
   centerCanvas();
   //Creation squares
@@ -59,40 +63,65 @@ function setup() {
   setInterval(stopwatch, 1000);
 
   //Push pions noirs haut
-  pions.push(new Tour(squares[0], 1));
-  pions.push(new Cavalier(squares[1], 1));
-  pions.push(new Cavalier(squares[2], 1));
-  pions.push(new Fou(squares[3], 1));
-  pions.push(new Roi(squares[4], 1));
-  pions.push(new Dame(squares[5], 1));
-  pions.push(new Fou(squares[6], 1));
-  pions.push(new Cavalier(squares[7], 1));
-  pions.push(new Cavalier(squares[8], 1));
-  pions.push(new Tour(squares[9], 1));
+  TourB = new Tour(squares[0], 1);
+  pions.push(TourB);
+  CavalierB1 = new Cavalier(squares[1], 1);
+  pions.push(CavalierB1);
+  CavalierB2 = new Cavalier(squares[2], 1);
+  pions.push(CavalierB2);
+  FouB1 = new Fou(squares[3], 1);
+  pions.push(FouB1);
+  RoiB = new Roi(squares[4], 1);
+  pions.push(RoiB);
+  DameB = new Dame(squares[5], 1);
+  pions.push(DameB);
+  FouB2 = new Fou(squares[6], 1);
+  pions.push(FouB2);
+  CavalierB3 = new Cavalier(squares[7], 1);
+  pions.push(CavalierB3);
+  CavalierB4 = new Cavalier(squares[8], 1);
+  pions.push(CavalierB4);
+  TourB = new Tour(squares[9], 1);
+  pions.push(TourB);
   for (i = 10; i < 20; i++) {
-    pawn = new Pion(squares[i], 1);
-    pions.push(pawn);
+    PawnB = new Pion(squares[i], 1);
+    pions.push(PawnB);
   }
 
-  //Push pions blancs bas
-  pions.push(new Tour(squares[150], 0));
-  pions.push(new Cavalier(squares[151], 0));
-  pions.push(new Cavalier(squares[152], 0));
-  pions.push(new Fou(squares[153], 0));
-  pions.push(new Roi(squares[154], 0));
-  pions.push(new Dame(squares[155], 0));
-  pions.push(new Fou(squares[156], 0));
-  pions.push(new Cavalier(squares[157], 0));
-  pions.push(new Cavalier(squares[158], 0));
-  pions.push(new Tour(squares[159], 0));
+  //Push pions blanc bas
+  TourW = new Tour(squares[150], 0);
+  pions.push(TourW);
+  CavalierW1 = new Cavalier(squares[151], 0);
+  pions.push(CavalierW1);
+  CavalierW2 = new Cavalier(squares[152], 0);
+  pions.push(CavalierW2);
+  FouW1 = new Fou(squares[153], 0);
+  pions.push(FouW1);
+  RoiW = new Roi(squares[154], 0);
+  pions.push(RoiW);
+  DameW = new Dame(squares[155], 0);
+  pions.push(DameW);
+  FouW2 = new Fou(squares[156], 0);
+  pions.push(FouW2);
+  CavalierW3 = new Cavalier(squares[157], 0);
+  pions.push(CavalierW3);
+  CavalierW4 = new Cavalier(squares[158], 0);
+  pions.push(CavalierW4);
+  TourW = new Tour(squares[159], 0);
+  pions.push(TourW);
   for (i = 140; i < 150; i++) {
-    pawn = new Pion(squares[i], 0);
-    pions.push(pawn);
+    PawnW = new Pion(squares[i], 0);
+    pions.push(PawnW);
   }
 }
 
-function newTour() {
-  toi = 0;
+function TourBlanc() {
+  if (tour == 0) {
+    if (pions.color == 0) {
+      pions.selectable = 1;
+      pions.isSelectable();
+    }
+  }
 }
 
 function windowResized() {
@@ -101,6 +130,8 @@ function windowResized() {
 
 //Draw de tout
 function draw() {
+  let sourisX = mouseX;
+  let sourisY = mouseY;
   background(200);
   drawBoard();
   //Draw texte
@@ -108,8 +139,16 @@ function draw() {
   //Draw pions
   for (i = 0; i < pions.length; i++) {
     pions[i].display();
-    // console.log(pions);
   }
+  if (
+    mouseX > pions.x &&
+    mouseX < pions.x + 50 &&
+    mouseY > pions.y &&
+    mouseY < pions.y + 50
+  ) {
+    console.log("greger");
+  }
+  // console.log(pions);
 }
 
 function drawBoard() {
@@ -147,9 +186,6 @@ function stopwatch() {
   }
   document.getElementById("minutes").innerHTML = minu;
   document.getElementById("secondes").innerHTML = sec;
-  // console.log(totalSeconds);
-  // console.log(sec);
-  // console.log(minu);
 }
 
 function drawWords() {
