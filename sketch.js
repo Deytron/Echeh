@@ -13,23 +13,22 @@ var deplacements = 20;
 var totalSeconds = 0;
 var minu = 0;
 var sec = 0;
-var textsec;
 
 //Chargement des assets avant que les fonctions draw() soient appelées
 function preload() {
   font = loadFont("assets/opensans.ttf");
   RoiWhite = loadImage("assets/king.png");
   RoiBlack = loadImage("assets/king_b.png");
-  DameWhite = loadImage("assets/king.png");
-  DameBlack = loadImage("assets/king_b.png");
-  FouWhite = loadImage("assets/king.png");
-  FouBlack = loadImage("assets/king_b.png");
-  CavalierWhite = loadImage("assets/king.png");
-  CavalierBlack = loadImage("assets/king_b.png");
-  TourWhite = loadImage("assets/king.png");
-  TourBlack = loadImage("assets/king_b.png");
-  PionWhite = loadImage("assets/king.png");
-  PionBlack = loadImage("assets/king_b.png");
+  DameWhite = loadImage("assets/queen.png");
+  DameBlack = loadImage("assets/queen_b.png");
+  FouWhite = loadImage("assets/bishop.png");
+  FouBlack = loadImage("assets/bishop_b.png");
+  CavalierWhite = loadImage("assets/knight.png");
+  CavalierBlack = loadImage("assets/knight_b.png");
+  TourWhite = loadImage("assets/rook.png");
+  TourBlack = loadImage("assets/rook_b.png");
+  PionWhite = loadImage("assets/pawn.png");
+  PionBlack = loadImage("assets/pawn_b.png");
 }
 
 function centerCanvas() {
@@ -39,7 +38,7 @@ function centerCanvas() {
 }
 
 function setup() {
-  cnv = createCanvas(700, 800);
+  cnv = createCanvas(500, 800);
   centerCanvas();
   //Creation squares
   for (y = 0; y < height; y += 50) {
@@ -59,9 +58,37 @@ function setup() {
   //Timer
   setInterval(stopwatch, 1000);
 
-  //Push pions
+  //Push pions noirs haut
+  pions.push(new Tour(squares[0], 1));
+  pions.push(new Cavalier(squares[1], 1));
+  pions.push(new Cavalier(squares[2], 1));
+  pions.push(new Fou(squares[3], 1));
   pions.push(new Roi(squares[4], 1));
   pions.push(new Dame(squares[5], 1));
+  pions.push(new Fou(squares[6], 1));
+  pions.push(new Cavalier(squares[7], 1));
+  pions.push(new Cavalier(squares[8], 1));
+  pions.push(new Tour(squares[9], 1));
+  for (i = 10; i < 20; i++) {
+    pawn = new Pion(squares[i], 1);
+    pions.push(pawn);
+  }
+
+  //Push pions blancs bas
+  pions.push(new Tour(squares[150], 0));
+  pions.push(new Cavalier(squares[151], 0));
+  pions.push(new Cavalier(squares[152], 0));
+  pions.push(new Fou(squares[153], 0));
+  pions.push(new Roi(squares[154], 0));
+  pions.push(new Dame(squares[155], 0));
+  pions.push(new Fou(squares[156], 0));
+  pions.push(new Cavalier(squares[157], 0));
+  pions.push(new Cavalier(squares[158], 0));
+  pions.push(new Tour(squares[159], 0));
+  for (i = 140; i < 150; i++) {
+    pawn = new Pion(squares[i], 0);
+    pions.push(pawn);
+  }
 }
 
 function newTour() {
@@ -113,32 +140,23 @@ function drawBoard() {
 }
 
 function stopwatch() {
-  textsec.clear();
-  textminu.clear();
   totalSeconds++;
   sec = totalSeconds % 60;
   if (sec >= 59) {
     minu++;
   }
+  document.getElementById("minutes").innerHTML = minu;
+  document.getElementById("secondes").innerHTML = sec;
   // console.log(totalSeconds);
   // console.log(sec);
   // console.log(minu);
 }
 
 function drawWords() {
-  textAlign(RIGHT);
-
   if (tour == 0) {
-    fill(blanc);
-    text("Tour des", 660, 50);
-    text("blancs", 660, 150);
+    textetour = "blancs";
   } else {
-    fill(noir);
-    text("Tour des", 660, 50);
-    text("noirs", 660, 150);
+    textetour = "noirs";
   }
-  fill(blanc);
-  textminu = text(minu, 575, 702);
-  text(":", 600, 700);
-  textsec = text(sec, 650, 702);
+  document.getElementById("couleur").innerHTML = textetour;
 }
