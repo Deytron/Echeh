@@ -13,12 +13,23 @@ var deplacements = 20;
 var totalSeconds = 0;
 var minu = 0;
 var sec = 0;
+var textsec;
 
 //Chargement des assets avant que les fonctions draw() soient appelées
 function preload() {
   font = loadFont("assets/opensans.ttf");
-  kingWhiteImg = loadImage("assets/king.png");
-  kingBlackImg = loadImage("assets/king_b.png");
+  RoiWhite = loadImage("assets/king.png");
+  RoiBlack = loadImage("assets/king_b.png");
+  DameWhite = loadImage("assets/king.png");
+  DameBlack = loadImage("assets/king_b.png");
+  FouWhite = loadImage("assets/king.png");
+  FouBlack = loadImage("assets/king_b.png");
+  CavalierWhite = loadImage("assets/king.png");
+  CavalierBlack = loadImage("assets/king_b.png");
+  TourWhite = loadImage("assets/king.png");
+  TourBlack = loadImage("assets/king_b.png");
+  PionWhite = loadImage("assets/king.png");
+  PionBlack = loadImage("assets/king_b.png");
 }
 
 function centerCanvas() {
@@ -49,7 +60,8 @@ function setup() {
   setInterval(stopwatch, 1000);
 
   //Push pions
-  pions.push(new King(squares[0], 1));
+  pions.push(new Roi(squares[4], 1));
+  pions.push(new Dame(squares[5], 1));
 }
 
 function newTour() {
@@ -68,7 +80,7 @@ function draw() {
   drawWords();
   //Draw pions
   for (i = 0; i < pions.length; i++) {
-    pions[i].show();
+    pions[i].display();
     // console.log(pions);
   }
 }
