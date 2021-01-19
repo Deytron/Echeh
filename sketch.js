@@ -15,6 +15,7 @@ var totalSeconds = 0;
 var minu = 0;
 var sec = 0;
 var moveleft;
+var clique = 0;
 
 //Chargement des assets avant que les fonctions draw() soient appelées
 function preload() {
@@ -96,6 +97,7 @@ function mouseLocation() {
       mouseY < pions[i].y + 50
     ) {
       if (pions[i].color == tour) {
+        clique = pions[i];
         fill("yellow");
         square(pions[i].x, pions[i].y, 50);
         pions[i].display();
@@ -104,7 +106,13 @@ function mouseLocation() {
   }
 }
 
-function pionType() {}
+function mousePressed() {
+  console.log(clique);
+}
+
+function pionType() {
+  true;
+}
 
 function windowResized() {
   centerCanvas();
