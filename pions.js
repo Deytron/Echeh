@@ -6,8 +6,9 @@ class Roi {
     this.pv = 50;
     this.attaque = 30;
     this.moveCost = 1;
-    this.chanceCrit = Math.round(random(1, 20));
-    this.selectable = 0;
+    //Chance échec : 1 - 10
+    //Chance touché : Na/n
+    //Chance critique : 11 - 20
   }
 
   display() {
@@ -17,17 +18,6 @@ class Roi {
       image(RoiWhite, this.x, this.y, 50, 50);
     }
   }
-
-  isSelectable() {
-    if (this.selectable == 1) {
-      console.log("oui");
-      fill(255, 204, 0);
-      carre = square(this.x, this.y, 50);
-    } else {
-      fill(25, 24, 0);
-      carre = square(this.x, this.y, 50);
-    }
-  }
 }
 
 class Dame {
@@ -35,18 +25,19 @@ class Dame {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
-    this.pv = 50;
-    this.attaque = 30;
-    this.moveCost = 1;
-    this.chanceCrit = Math.round(random(1, 20));
-    this.selectable = 0;
+    this.pv = 150;
+    this.attaque = 25;
+    this.moveCost = 9;
+    //Chance échec : 1 - 5
+    //Chance touché : 6 - 17
+    //Chance critique : 18 - 20
   }
 
   display() {
     if (this.color == 1) {
-      image(DameWhite, this.x, this.y, 50, 50);
-    } else {
       image(DameBlack, this.x, this.y, 50, 50);
+    } else {
+      image(DameWhite, this.x, this.y, 50, 50);
     }
   }
 }
@@ -56,11 +47,12 @@ class Fou {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
-    this.pv = 50;
+    this.pv = 150;
     this.attaque = 30;
-    this.moveCost = 1;
-    this.chanceCrit = Math.round(random(1, 20));
-    this.selectable = 0;
+    this.moveCost = 3;
+    //Chance échec : 1 - 6
+    //Chance touché : 7 - 14
+    //Chance critique : 15 - 20
   }
 
   display() {
@@ -77,11 +69,12 @@ class Cavalier {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
-    this.pv = 50;
-    this.attaque = 30;
-    this.moveCost = 1;
-    this.chanceCrit = Math.round(random(1, 20));
-    this.selectable = 0;
+    this.pv = 200;
+    this.attaque = 50;
+    this.moveCost = 3;
+    //Chance échec : 1 - 3
+    //Chance touché : 4 - 15
+    //Chance critique : 16 - 20
   }
 
   display() {
@@ -99,10 +92,11 @@ class Tour {
     this.y = square.y;
     this.color = color;
     this.pv = 50;
-    this.attaque = 30;
-    this.moveCost = 1;
-    this.chanceCrit = Math.round(random(1, 20));
-    this.selectable = 0;
+    this.attaque = 5;
+    this.moveCost = 5;
+    //Chance échec : 1 - 4
+    //Chance touché : 5 - 18
+    //Chance critique : 19 - 20
   }
 
   display() {
@@ -112,6 +106,10 @@ class Tour {
       image(TourWhite, this.x, this.y, 50, 50);
     }
   }
+
+  doubleTour() {
+    true;
+  }
 }
 
 class Pion {
@@ -119,11 +117,12 @@ class Pion {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
-    this.pv = 50;
-    this.attaque = 30;
+    this.pv = 100;
+    this.attaque = 25;
     this.moveCost = 1;
-    this.chanceCrit = Math.round(random(1, 20));
-    this.selectable = 0;
+    //Chance échec : 1 - 4
+    //Chance touché : 5 - 16
+    //Chance critique : 17 - 20
   }
 
   display() {

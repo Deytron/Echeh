@@ -1,4 +1,4 @@
-function Square(_x, _y) {
+function Carre(_x, _y) {
   this.x = _x;
   this.y = _y;
 
