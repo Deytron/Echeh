@@ -114,6 +114,15 @@ function pionType() {
   true;
 }
 
+function nextTour() {
+  if (tour == 1) {
+    tour = 0;
+  } else if (tour == 0) {
+    tour = 1;
+  }
+  drawWords();
+}
+
 function windowResized() {
   centerCanvas();
 }
