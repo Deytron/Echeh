@@ -6,11 +6,20 @@
     <title>Echeh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="p5.js"></script>
-    <script src="sketch.js"></script>
-    <script src="square.js"></script>
-    <script src="pions.js"></script>
+    <!-- Import JS files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+    <script src="JS/sketch.js"></script>
+    <script src="JS/square.js"></script>
 
+    <!-- Import all pieces -->
+    <script src="JS/pieces/pion.js"></script>
+    <script src="JS/pieces/tour.js"></script>
+    <script src="JS/pieces/cavalier.js"></script>
+    <script src="JS/pieces/dame.js"></script>
+    <script src="JS/pieces/fou.js"></script>
+    <script src="JS/pieces/roi.js"></script>
+
+    <!-- Import Javascript -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"
       integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw=="
@@ -19,8 +28,9 @@
   </head>
 
   <body>
+    <!-- Interface gauche -->
     <div id="showTour">
-      <h1 id="tourde">Au tour des</h1>
+      <h1 id="tourde">Au tour des⠀</h1>
       <h1 id="couleur"></h1>
     </div>
     <div id="timer">
@@ -28,7 +38,7 @@
       <h2>:</h2>
       <h2 id="secondes"></h2>
     </div>
-    <button class="buttonNext" type="button" onclick="nextTour()">
+    <button id="buttonNext" type="button" onclick="nextTour()">
       Nouveau tour
     </button>
     <main></main>
