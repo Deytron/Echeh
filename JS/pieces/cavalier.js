@@ -1,6 +1,6 @@
 class Cavalier extends Pion {
   constructor(square, color) {
-    super(square.x, square.y, color);
+    super(x, y, color);
     this.pv = 200;
     this.attaque = 50;
     this.moveCost = 3;

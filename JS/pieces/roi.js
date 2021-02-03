@@ -1,6 +1,6 @@
 class Roi extends Pion {
   constructor(square, color) {
-    super(square.x, square.y, color);
+    super(x, y, color);
     this.pv = 50;
     this.attaque = 30;
     this.moveCost = 1;
@@ -10,8 +10,8 @@ class Roi extends Pion {
   }
 
   display() {
+    RoiWhite = loadImage("assets/king.png");
+    RoiBlack = loadImage("assets/king_b.png");
     super.display();
-    PionBlack = RoiBlack;
-    PionWhite = RoiWhite;
   }
 }

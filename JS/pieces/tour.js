@@ -1,6 +1,6 @@
 class Tour extends Pion {
   constructor(square, color) {
-    super(square.x, square.y, color);
+    super(x, y, color);
     this.pv = 50;
     this.attaque = 5;
     this.moveCost = 5;

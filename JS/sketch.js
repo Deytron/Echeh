@@ -56,16 +56,29 @@ function setup() {
   setInterval(stopwatch, 1000);
 
   //Push pions noirs haut
-  pions.push(new Tour(squares[0], 1));
-  pions.push(new Cavalier(squares[1], 1));
-  pions.push(new Cavalier(squares[2], 1));
-  pions.push(new Fou(squares[3], 1));
-  pions.push(new Roi(squares[4], 1));
-  pions.push(new Dame(squares[5], 1));
-  pions.push(new Fou(squares[6], 1));
-  pions.push(new Cavalier(squares[7], 1));
-  pions.push(new Cavalier(squares[8], 1));
-  pions.push(new Tour(squares[9], 1));
+  pions.push(
+    new Tour(),
+    new Cavalier(),
+    new Cavalier(),
+    new Fou(),
+    new Roi(),
+    new Dame(),
+    new Fou(),
+    new Cavalier(),
+    new Cavalier(),
+    new Tour()
+  );
+  console.log(pions);
+  // pions.push(new Tour(squares[0], 1));
+  // pions.push(new Cavalier(squares[1], 1));
+  // pions.push(new Cavalier(squares[2], 1));
+  // pions.push(new Fou(squares[3], 1));
+  // pions.push(new Roi(squares[4], 1));
+  // pions.push(new Dame(squares[5], 1));
+  // pions.push(new Fou(squares[6], 1));
+  // pions.push(new Cavalier(squares[7], 1));
+  // pions.push(new Cavalier(squares[8], 1));
+  // pions.push(new Tour(squares[9], 1));
   for (i = 10; i < 20; i++) {
     Pawn = new Pion(squares[i], 1);
     pions.push(Pawn);
