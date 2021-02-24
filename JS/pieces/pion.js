@@ -3,6 +3,8 @@ class Pion {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
+    this.row = this.y / 50;
+    this.col = this.x / 50;
     this.pv = 100;
     this.attaque = 25;
     this.moveCost = 1;
@@ -21,6 +23,10 @@ class Pion {
     }
   }
 
+  superLog() {
+    console.log(this.row, this.col);
+  }
+
   highlight() {
     if (
       mouseX > this.x &&
@@ -32,13 +38,12 @@ class Pion {
         fill("yellow");
         square(this.x, this.y, 50);
         this.display();
+        if (mouseIsPressed) {
+          fill("cyan");
+          square(this.x, this.y, 50);
+          this.display();
+        }
       }
-    }
-  }
-
-  movePawn() {
-    if (clique == Pion[i]) {
-      console.log("Hey!");
     }
   }
 }

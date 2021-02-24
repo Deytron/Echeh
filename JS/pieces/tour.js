@@ -4,6 +4,8 @@ class Tour extends Pion {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
+    this.row = this.y / 50;
+    this.col = this.x / 50;
     this.pv = 50;
     this.attaque = 5;
     this.moveCost = 5;
@@ -14,6 +16,7 @@ class Tour extends Pion {
     //Chance critique : 19 - 20
     super.display();
     super.highlight();
+    super.superLog();
   }
 
   doubleTour() {

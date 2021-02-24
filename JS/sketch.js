@@ -83,14 +83,12 @@ function setup() {
     Pawn = new Pion(squares[i], 0);
     pions.push(Pawn);
   }
+  console.log(squares);
+  console.log(pions);
 }
 
 function mouseLocation() {
   for (i = 0; i < pions.length; i++) {}
-}
-
-function mousePressed() {
-  console.log(clique);
 }
 
 function nextTour() {

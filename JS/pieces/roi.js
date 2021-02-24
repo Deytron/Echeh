@@ -4,6 +4,8 @@ class Roi extends Pion {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
+    this.row = this.y / 50;
+    this.col = this.x / 50;
     this.pv = 50;
     this.attaque = 30;
     this.moveCost = 1;
@@ -14,5 +16,6 @@ class Roi extends Pion {
     //Chance critique : 11 - 20
     super.display();
     super.highlight();
+    super.superLog();
   }
 }

@@ -4,6 +4,8 @@ class Dame extends Pion {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
+    this.row = this.y / 50;
+    this.col = this.x / 50;
     this.pv = 150;
     this.attaque = 25;
     this.moveCost = 9;
@@ -14,5 +16,6 @@ class Dame extends Pion {
     //Chance critique : 18 - 20
     super.display();
     super.highlight();
+    super.superLog();
   }
 }

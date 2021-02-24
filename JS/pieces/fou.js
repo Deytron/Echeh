@@ -4,6 +4,8 @@ class Fou extends Pion {
     this.x = square.x;
     this.y = square.y;
     this.color = color;
+    this.row = this.y / 50;
+    this.col = this.x / 50;
     this.pv = 150;
     this.attaque = 30;
     this.moveCost = 3;
@@ -14,5 +16,6 @@ class Fou extends Pion {
     //Chance critique : 15 - 20
     super.display();
     super.highlight();
+    super.superLog();
   }
 }
