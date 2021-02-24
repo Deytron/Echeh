@@ -15,22 +15,19 @@ let totalSeconds = 0;
 let minu = 0;
 let sec = 0;
 let moveleft;
-let clique = 0;
 
 //Chargement des assets avant que les fonctions draw() soient appelées
 function preload() {
-  RoiWhite = loadImage("assets/king.png");
-  RoiBlack = loadImage("assets/king_b.png");
-  DameWhite = loadImage("assets/queen.png");
-  DameBlack = loadImage("assets/queen_b.png");
-  FouWhite = loadImage("assets/bishop.png");
-  FouBlack = loadImage("assets/bishop_b.png");
-  CavalierWhite = loadImage("assets/knight.png");
-  CavalierBlack = loadImage("assets/knight_b.png");
-  TourWhite = loadImage("assets/rook.png");
-  TourBlack = loadImage("assets/rook_b.png");
-  PionWhite = loadImage("assets/pawn.png");
-  PionBlack = loadImage("assets/pawn_b.png");
+  // RoiWhite = loadImage("assets/king.png");
+  // RoiBlack = loadImage("assets/king_b.png");
+  // DameWhite = loadImage("assets/queen.png");
+  // DameBlack = loadImage("assets/queen_b.png");
+  // FouWhite = loadImage("assets/bishop.png");
+  // FouBlack = loadImage("assets/bishop_b.png");
+  // CavalierWhite = loadImage("assets/knight.png");
+  // CavalierBlack = loadImage("assets/knight_b.png");
+  // TourWhite = loadImage("assets/rook.png");
+  // TourBlack = loadImage("assets/rook_b.png");
 }
 
 function centerCanvas() {
@@ -56,29 +53,16 @@ function setup() {
   setInterval(stopwatch, 1000);
 
   //Push pions noirs haut
-  pions.push(
-    new Tour(),
-    new Cavalier(),
-    new Cavalier(),
-    new Fou(),
-    new Roi(),
-    new Dame(),
-    new Fou(),
-    new Cavalier(),
-    new Cavalier(),
-    new Tour()
-  );
-  console.log(pions);
-  // pions.push(new Tour(squares[0], 1));
-  // pions.push(new Cavalier(squares[1], 1));
-  // pions.push(new Cavalier(squares[2], 1));
-  // pions.push(new Fou(squares[3], 1));
-  // pions.push(new Roi(squares[4], 1));
-  // pions.push(new Dame(squares[5], 1));
-  // pions.push(new Fou(squares[6], 1));
-  // pions.push(new Cavalier(squares[7], 1));
-  // pions.push(new Cavalier(squares[8], 1));
-  // pions.push(new Tour(squares[9], 1));
+  pions.push(new Tour(squares[0], 1));
+  pions.push(new Cavalier(squares[1], 1));
+  pions.push(new Cavalier(squares[2], 1));
+  pions.push(new Fou(squares[3], 1));
+  pions.push(new Roi(squares[4], 1));
+  pions.push(new Dame(squares[5], 1));
+  pions.push(new Fou(squares[6], 1));
+  pions.push(new Cavalier(squares[7], 1));
+  pions.push(new Cavalier(squares[8], 1));
+  pions.push(new Tour(squares[9], 1));
   for (i = 10; i < 20; i++) {
     Pawn = new Pion(squares[i], 1);
     pions.push(Pawn);
@@ -102,29 +86,11 @@ function setup() {
 }
 
 function mouseLocation() {
-  for (i = 0; i < pions.length; i++) {
-    if (
-      mouseX > pions[i].x &&
-      mouseX < pions[i].x + 50 &&
-      mouseY > pions[i].y &&
-      mouseY < pions[i].y + 50
-    ) {
-      if (pions[i].color == tour) {
-        clique = pions[i];
-        fill("yellow");
-        square(pions[i].x, pions[i].y, 50);
-        pions[i].display();
-      }
-    }
-  }
+  for (i = 0; i < pions.length; i++) {}
 }
 
 function mousePressed() {
   console.log(clique);
-}
-
-function pionType() {
-  true;
 }
 
 function nextTour() {
@@ -149,6 +115,7 @@ function draw() {
   //Draw pions
   for (i = 0; i < pions.length; i++) {
     pions[i].display();
+    pions[i].highlight();
   }
   mouseLocation();
 }
