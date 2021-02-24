@@ -16,7 +16,6 @@ class Tour extends Pion {
     //Chance critique : 19 - 20
     super.display();
     super.highlight();
-    super.superLog();
   }
 
   doubleTour() {

@@ -16,6 +16,5 @@ class Fou extends Pion {
     //Chance critique : 15 - 20
     super.display();
     super.highlight();
-    super.superLog();
   }
 }

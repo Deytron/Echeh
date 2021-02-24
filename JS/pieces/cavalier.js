@@ -15,7 +15,5 @@ class Cavalier extends Pion {
     //Chance touché : 4 - 15
     //Chance critique : 16 - 20
     super.display();
-    super.highlight();
-    super.superLog();
-  }
+    super.highlight();  }
 }

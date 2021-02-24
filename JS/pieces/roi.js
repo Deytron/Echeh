@@ -16,6 +16,5 @@ class Roi extends Pion {
     //Chance critique : 11 - 20
     super.display();
     super.highlight();
-    super.superLog();
   }
 }

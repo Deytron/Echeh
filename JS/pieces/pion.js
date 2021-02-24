@@ -23,9 +23,11 @@ class Pion {
     }
   }
 
-  superLog() {
-    console.log(this.row, this.col);
-  }
+  // possibleMoves() {
+  //   if (this.color == 1) {
+  //     for (Carre in this.x - 1)
+  //   }
+  // }
 
   highlight() {
     if (
@@ -41,6 +43,7 @@ class Pion {
         if (mouseIsPressed) {
           fill("cyan");
           square(this.x, this.y, 50);
+          this.possibleMoves();
           this.display();
         }
       }

@@ -16,6 +16,5 @@ class Dame extends Pion {
     //Chance critique : 18 - 20
     super.display();
     super.highlight();
-    super.superLog();
   }
 }
